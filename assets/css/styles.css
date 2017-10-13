@@ -1,0 +1,57 @@
+.header {
+  padding-top: 15px;
+  border-bottom: 1px solid grey;
+  padding-bottom: 5px;
+}
+a:hover {
+  text-decoration: none;
+}
+.brand {
+  display: inline;
+  color: #3e923e;
+}
+
+/* navbar*/
+.panel {
+  margin-top: 20px;
+}
+.aka-header {
+  color: #3e923e;
+}
+.aka {
+  color: black;
+}
+.avatar {
+  width:100%;
+}
+
+/* Home page*/
+.jumbotron {
+  margin-top: 20px;
+  padding:15px;
+}
+.start {
+  width:120px;
+}
+
+/* All users table */
+.action span {
+  margin-right: 8px;
+  color: #3e923e;
+}
+
+/* Edit profile page */
+textarea {
+  height: 175px !important;
+  resize: none;
+}
+.hidden {
+  display: none;
+}
+
+
+/* Footer */
+.footer {
+  padding-bottom: 15px;
+  background-color: #eee;
+}

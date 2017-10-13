@@ -1,0 +1,18 @@
+{{#if hacks}}
+  <h2>All the hacks</h2>
+  {{#each hacks}}
+    <div class="hack">
+      <a href="/hacks/{{slug}}"><h3>{{hackName}}</h3></a>
+      <p>{{description}}</p>
+      <div class="">
+        {{#each team}}
+          <span>{{username}}</span>
+        {{/each}}
+      </div>
+    </div>
+  {{/each}}
+
+{{else}}
+  <h3>Ooops... there are no hacks.</h3>
+  <a href="/hacks/start"><p>Start a hack...</p></a>
+{{/if}}

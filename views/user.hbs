@@ -1,0 +1,25 @@
+{{#if user}}
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <h3 style="display:inline;" class="panel-title aka-header">Hacker : {{user.fullName}} aka <span class="aka">{{user.displayName}}</span></h3>
+        <a class='pull-right btn btn-sm btn-default' href="/users/{{user.username}}/edit">Edit</a>
+        <span class="badge">{{user.points}}</span>
+    </div>
+    <div class="panel-body" >
+      <div class="col-xs-3">
+        <img src="/images/{{user.meta.profile}}" class="img img-rounded avatar" alt="{{user.fullName}}">
+      </div>
+      <div class="col-xs-9">
+        <h4>Bio</h4>
+        <p style="color:{{user.meta.themeColor}}">{{user.meta.bioInfo}}</p>
+      </div>
+
+    </div>
+    <div class="panel-footer">
+      <p>
+        <a href="https://github.com/{{user.meta.gitAccount}}"><span class="octicon octicon-mark-github"></span> {{user.meta.gitAccount}}</a>
+        <a href="{{user.meta.twitterAccount}}"><span class="octicon octicon-megaphone"></span></a>
+      </p>
+    </div>
+  </div>
+{{/if}}

@@ -1,0 +1,19 @@
+<h3>Register a new hack</h3>
+<p>Bring your idea to life by just the name</p>
+<form class="form" action="/hacks/start" method="post">
+  <div class="form-group">
+    <label for="hackName">Give your hack a cool name</label>
+    <input type="text" class="form-control" id="hackName" onblur="genSlug()" name="hackName" placeholder="Cool hack name..."><br>
+    <input type="text" class="form-control" id="slug" value="" name="slug" placeholder="Slug name...(no spaces)">
+  </div>
+  <div class="form-group">
+    <label for="hackName">Tell us about the idea in 200 words</label>
+    <textarea class='form-control' placeholder='Hack description...' name="description"></textarea>
+  </div>
+  <div class="form-group">
+    <button type='submit' class='btn btn-lg btn-warning'>REGISTER</button>
+  </div>
+</form>
+<div class="">
+  <p>Find a team <a href="/users">here</a></p>
+</div>

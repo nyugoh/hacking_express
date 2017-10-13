@@ -1,0 +1,90 @@
+<div class="">
+  <h3>Your Profile Page</h3>
+  <form class="" enctype="multipart/form-data" action="/users/{{user.username}}/edit" method="post">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label for="fullName">Full name</label>
+        <input type="text" required class="form-control" name="fullName" value="{{user.fullName}}" id="fullName" placeholder="Full name...">
+      </div>
+
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" required class="form-control" name="username" value="{{user.username}}" disabled id="username" placeholder="Username...">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" required class="form-control" name="email" value="{{user.meta.email}}" id="email" placeholder="Email...">
+      </div>
+
+      <div class="form-group">
+        <label for="bioInfo">Bio info</label>
+        <textarea class='form-control' name="bioInfo" rowspan="4" placeholder='Some hacker bio info is here' >{{user.meta.bioInfo}}</textarea>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="row">
+        <div class="col-xs-3">
+          <img src="/images/{{user.meta.profile}}" name="profile" class="img img-rounded avatar" alt="{{user.fullName}}">
+        </div>
+        <div class="col-xs-9 form-group">
+          <label for="fullName">Profile</label>
+          <input type="file" class="form-control" name="profile" placeholder="Choose a profile...">
+        </div>
+      </div><br>
+      <div class="form-group">
+        <label for="themeColor">Theme Color</label>
+        <input type="color" class="form-control" name="themeColor" value="{{user.meta.themeColor}}" id="themeColor" placeholder="Theme color...">
+      </div>
+
+      <div class="form-group">
+        <label for="country">Country</label>
+        <input type="text" class="form-control" name="country" value="{{user.country}}" id="country" placeholder="Country...">
+      </div>
+
+      <div class="form-group">
+        <label for="gitAccount">Github Account <span class="octicon octicon-mark-github"></span></label>
+        <input type="text" class="form-control" name="gitAccount" value="{{user.meta.gitAccount}}" id="gitAccount" placeholder="Github account link...">
+      </div>
+
+      <div class="form-group">
+        <label for="twitterAccount">Twitter</label>
+        <input type="twitterAccount" name="twitterAccount" class="form-control" value="{{user.meta.twitterAccount}}" id="twitterAccount" placeholder="Twitter handle...">
+      </div>
+
+      {{#if user.coder}}
+
+      {{else}}
+        <div class="form-group">
+          <label for="bioInfo">Tell us your programming skills</label><br>
+          <span>Do you have programming skills?</span>
+          <select class="form-control" onchange="showLevel(this.value)" name="coder">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+          </select>
+          <div id="level" class="hidden">
+            <span>Rate your skill level?</span>
+            <select class="form-control" name="cooder">
+              <option value="0">Beginner</option>
+              <option value="1">Intermidiate</option>
+              <option value="2">Expert</option>
+            </select>
+          </div>
+        </div>
+      {{/if}}
+    </div>
+    <div class="col-xs-offset-9 col-xs-3 text-right">
+      <button type='submit' class='btn btn-lg btn-warning'>Update</button>
+    </div>
+    </div>
+  </form>
+</div>
+<script type="text/javascript">
+  function showLevel(value) {
+    if(value == 1){
+      $('#level').toggleClass('hidden')
+    } else {
+      $('#level').toggleClass('hidden')
+    }
+  }
+</script>
